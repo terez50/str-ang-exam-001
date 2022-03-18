@@ -9,15 +9,15 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Superpower</th>
-          <th>Address</th>
+          <th (click) = "onClick('id')">#</th>
+          <th (click) = "onClick('name')">Name</th>
+          <th (click) = "onClick('superPower')">Superpower</th>
+          <th (click) = "onClick('address')">Address</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let hero of heroes | filter:'name':phrase">
+        <tr *ngFor = "let hero of heroes | filter:'name':phrase | sorter:key">
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
           <td>{{hero.superPower}}</td>

@@ -10,6 +10,7 @@ import { Hero } from 'src/app/model/hero';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = this.heroService.getAll();
   phrase: string = '';
+  key: string = 'name';
 
   constructor(
     private heroService: HeroService
@@ -18,4 +19,7 @@ export class HeroesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(field: string): void {
+    this.key = field;
+  }
 }
