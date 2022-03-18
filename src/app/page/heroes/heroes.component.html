@@ -1,4 +1,10 @@
 <div class="row">
+  <div class="col-3 offset-6 mb-3">
+    <span>Filter by:</span>
+    <input
+      [(ngModel)] = "phrase"
+      type="text" class="form-control">
+  </div>
   <div class="col-6 offset-3">
     <table class="table table-striped">
       <thead>
@@ -11,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let hero of heroes">
+        <tr *ngFor = "let hero of heroes | filter:'name':phrase">
           <td>{{hero.id}}</td>
           <td>{{hero.name}}</td>
           <td>{{hero.superPower}}</td>

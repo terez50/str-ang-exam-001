@@ -9,6 +9,7 @@ import { Hero } from 'src/app/model/hero';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = this.heroService.getAll();
+  phrase: string = '';
 
   constructor(
     private heroService: HeroService
